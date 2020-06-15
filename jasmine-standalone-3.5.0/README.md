@@ -57,6 +57,12 @@ This code is ready to use. Please fork and clone to your own GitHub to start.
 
 ## My Approach
 
+- Using an 'console error guided' TDD approach. 
+
+- I began by using the console in the SpecRunner.html to begin. This allows me to consider the MVP guided by user interaction.  
+
+- After I address the console error as the first Jasmine test I need to write. For Example: ``` test_bank = Bank new ``` in the console returned Bank undefined. 
+
 ## My Structure 
 
 ## Dependancies 
