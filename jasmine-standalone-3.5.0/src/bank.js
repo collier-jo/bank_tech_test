@@ -10,4 +10,8 @@ class Bank{
    depositMoney(amount){
       this.balance += amount;
    }
+
+   withdrawMoney(amount){
+      this.balance -= amount;
+   }
 }

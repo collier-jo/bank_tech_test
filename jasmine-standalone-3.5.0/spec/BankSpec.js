@@ -14,4 +14,10 @@ describe('Bank', function(){
     bank.depositMoney(1000);
     expect(bank.getCurrentBalance()).toEqual(1000);
   });
+
+  it("Can withdraw money from bank", function(){
+    bank.depositMoney(1000);
+    bank.withdrawMoney(500);
+    expect(bank.getCurrentBalance()).toEqual(500);
+  })
 });
