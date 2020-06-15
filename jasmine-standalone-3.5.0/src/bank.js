@@ -30,8 +30,12 @@ class Bank{
       throw new Error(`Insufficent Funds. Your balance is: ${this.balance}`)
     } else {
       this.balance -= amount;
+
+      var fixedAmount = amount.toFixed(2)
+      var fixedBalance = this.balance.toFixed(2)
+
       var stringDate = date.toLocaleDateString()
-      this.transactionRecord[this.transactionIndex] = {date: stringDate, credit: "", debit: amount, balance: this.balance}
+      this.transactionRecord[this.transactionIndex] = {date: stringDate, credit: "", debit: fixedAmount, balance: fixedBalance}
       this.transactionIndex ++ 
     }
   }
