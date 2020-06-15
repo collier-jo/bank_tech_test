@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "jasmine-standalone-3.5.0",
+			"path": ".."
+		},
+		{
+			"name": "ten-green-bottles",
+			"path": "../../progress_workshop/ten-green-bottles"
+		}
+	],
+	"settings": {}
+}
