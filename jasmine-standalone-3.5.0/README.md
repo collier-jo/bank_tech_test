@@ -74,6 +74,10 @@ AS A tax auditor
 SO THAT I can track peoples finances 
 I NEED to have an accurate record of a bank customers withdrawals 
 
+### Edge Cases:
+- Someone tries to withdraw money they do not have 
+- someone prints a statement without activity 
+
 
 
 ## Install instructions
