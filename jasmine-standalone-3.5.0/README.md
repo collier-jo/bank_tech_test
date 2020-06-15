@@ -83,11 +83,15 @@ I NEED to be able to withdraw my cash √
 
 AS A tax auditor 
 SO THAT I can track peoples finances 
-I NEED to have an accurate record of a bank customers despoits 
+I NEED to have an accurate record of a bank customers despoits √
 
 AS A tax auditor 
 SO THAT I can track peoples finances 
-I NEED to have an accurate record of a bank customers withdrawals 
+I NEED to have an accurate record of a bank customers withdrawals √ 
+
+AS A bank customer, 
+SO THAT I can track my finances 
+I NEED to have a statement printed 
 
 ### Edge Cases:
 - Someone tries to withdraw money they do not have 

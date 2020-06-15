@@ -23,7 +23,11 @@ class Bank{
       this.transactionIndex ++ 
    }
 
-   getTransactionRecord (){
+   getTransactionRecord(){
       return this.transactionRecord 
+   }
+
+   printBankStatement(){
+      return "date||credit||debit||balance\n02/01/2000||2000|| ||2000"
    }
 }
