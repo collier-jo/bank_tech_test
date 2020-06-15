@@ -15,8 +15,10 @@ class Bank{
       this.transactionIndex ++ 
    }
 
-   withdrawMoney(amount){
+   withdrawMoney(amount, date){
       this.balance -= amount;
+      this.transactionRecord[this.transactionIndex] = {date: date, credit: "", debit: amount, balance: this.balance}
+      this.transactionIndex ++ 
    }
 
    getTransactionRecord (){

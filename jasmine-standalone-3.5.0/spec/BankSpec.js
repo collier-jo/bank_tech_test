@@ -23,7 +23,13 @@ describe('Bank', function(){
 
   it("Has an active record of deposits with dates", function(){
     bank.depositMoney(1000, "02/02/2000");
-    expect(bank.getTransactionRecord ()).toEqual({1: {date: "02/02/2000", credit: 1000, debit: "", balance: 1000}} )
+    expect(bank.getTransactionRecord()).toEqual({1: {date: "02/02/2000", credit: 1000, debit: "", balance: 1000}} )
     expect(bank.transactionIndex).toEqual(2)
+  })
+
+  it("Has an active record of withdrawals with dates", function(){
+    bank.depositMoney(1000, "02/02/2000");
+    bank.withdrawMoney(500, "03/02/2000");
+    expect(bank.getTransactionRecord()).toEqual({1: {date: "02/02/2000", credit: 1000, debit: "", balance: 1000}, 2:{date: "03/02/2000", credit: "", debit: 500, balance: 500} })
   })
 });
