@@ -38,7 +38,7 @@ describe('Bank', function(){
   it("Prints out a statement of users transactions", function(){
     var date = new Date('02 January 2000 00:00 UTC');
     bank.depositMoney(2000, date)
-    expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n02/01/2000||2000|| ||2000")
+    expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n02/01/2000||2000||||2000")
   })
 
 });
