@@ -6,14 +6,22 @@ class Bank{
     this.MINBALANCE = 0
   }
 
+  // var num = 5.56789;
+// var n = num.toFixed(2);
+
   getCurrentBalance(){
     return this.balance;
   }
 
   depositMoney(amount, date = new Date){
+
     this.balance += amount;
+
+    var fixedAmount = amount.toFixed(2)
+    var fixedBalance = this.balance.toFixed(2)
+
     var stringDate = date.toLocaleDateString()
-    this.transactionRecord[this.transactionIndex] = {date: stringDate, credit: amount, debit: "", balance: this.balance}
+    this.transactionRecord[this.transactionIndex] = {date: stringDate, credit: fixedAmount, debit: "", balance: fixedBalance}
     this.transactionIndex ++ 
   }
 
