@@ -9,4 +9,9 @@ describe('Bank', function(){
   it("Has a default balance of 0", function(){
     expect(bank.getCurrentBalance()).toEqual(0);
   });
-})
+
+  it("Can deposit money into the bank", function(){
+    bank.depositMoney(1000);
+    expect(bank.getCurrentBalance()).toEqual(1000);
+  });
+});
