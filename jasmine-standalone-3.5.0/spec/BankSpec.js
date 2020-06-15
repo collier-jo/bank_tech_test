@@ -41,25 +41,13 @@ describe('Bank', function(){
     expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n02/01/2000||2000||||2000\n")
   });
 
-  it("Prints out a statement of users transaction, x1 desposit x1 withdrawal(unordered)", function(){
+  it("Prints out a statement of users transaction, x1 desposit x1 withdrawal(ORDERED)", function(){
     var date = new Date('02 January 2000 00:00 UTC');
     var date2 = new Date('03 January 2000 00:00 UTC');
+    var date3 = new Date('04 January 2000 00:00 UTC');
     bank.depositMoney(2000, date)
     bank.withdrawMoney(1000, date2)
-    expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n02/01/2000||2000||||2000\n03/01/2000||||1000||1000\n")
+    bank.withdrawMoney(1000, date3)
+    expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n04/01/2000||||1000||0\n03/01/2000||||1000||1000\n02/01/2000||2000||||2000\n")
   });
-
-
 });
-
-
-// "date     ||credit||debit ||balance\n
-// 02/01/2000||2000  ||      ||2000\n
-// 03/01/2000||      ||1000  ||1000\n"
-
-
-
-// date       || credit  || debit  || balance
-// 14/01/2012 ||         || 500.00 || 2500.00
-// 13/01/2012 || 2000.00 ||        || 3000.00
-// 10/01/2012 || 1000.00 ||        || 1000.00
