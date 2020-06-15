@@ -50,4 +50,8 @@ describe('Bank', function(){
     bank.withdrawMoney(1000, date3)
     expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n04/01/2000||||1000||0\n03/01/2000||||1000||1000\n02/01/2000||2000||||2000\n")
   });
+
+  it("Does not allow balance to be in minus", function(){
+    expect(function() { bank.withdrawMoney(1000); }).toThrow(new Error("Insufficent Funds. Your balance is: 0")); 
+  })
 });

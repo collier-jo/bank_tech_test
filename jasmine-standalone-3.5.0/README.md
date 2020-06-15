@@ -91,7 +91,11 @@ I NEED to have an accurate record of a bank customers withdrawals √
 
 AS A bank customer, 
 SO THAT I can track my finances 
-I NEED to have a statement printed 
+I NEED to have a statement printed √
+
+AS A bank customer,
+SO THAT I do not overdraw my account
+I NEED to only withdraw funds I have
 
 ### Edge Cases:
 - Someone tries to withdraw money they do not have 

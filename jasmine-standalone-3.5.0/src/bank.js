@@ -3,6 +3,7 @@ class Bank{
     this.balance = 0;
     this.transactionRecord  = {}
     this.transactionIndex = 1
+    this.MINBALANCE = 0
   }
 
   getCurrentBalance(){
@@ -17,10 +18,14 @@ class Bank{
   }
 
   withdrawMoney(amount, date = new Date){
-    this.balance -= amount;
-    var stringDate = date.toLocaleDateString()
-    this.transactionRecord[this.transactionIndex] = {date: stringDate, credit: "", debit: amount, balance: this.balance}
-    this.transactionIndex ++ 
+    if(this.balance === this.MINBALANCE){
+      throw new Error(`Insufficent Funds. Your balance is: ${this.balance}`)
+    } else {
+      this.balance -= amount;
+      var stringDate = date.toLocaleDateString()
+      this.transactionRecord[this.transactionIndex] = {date: stringDate, credit: "", debit: amount, balance: this.balance}
+      this.transactionIndex ++ 
+    }
   }
 
   getTransactionRecord(){
