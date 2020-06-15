@@ -52,6 +52,30 @@ Bank:  |
 |      | .withdrawal (amount, date = Date.now())
 |      | .print()
 
+### User Stories
+
+AS A bank customer,
+SO THAT to track of my money 
+I NEED to have a bank balance 
+
+AS A bank customer, 
+SO THAT I can store
+I NEED to be able to despoit cash 
+
+AS A bank customer, 
+SO THAT I can use my money
+I NEED to be able to withdraw my cash
+
+AS A tax auditor 
+SO THAT I can track peoples finances 
+I NEED to have an accurate record of a bank customers despoits 
+
+AS A tax auditor 
+SO THAT I can track peoples finances 
+I NEED to have an accurate record of a bank customers withdrawals 
+
+
+
 ## Install instructions
 This code is ready to use. Please fork and clone to your own GitHub to start. 
 
