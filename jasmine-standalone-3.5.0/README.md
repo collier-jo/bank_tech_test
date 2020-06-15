@@ -22,7 +22,9 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 
+
 ## Plan: 
+
 ### Input / Output 
 
 Input | Output 
@@ -52,19 +54,32 @@ Bank:  |
 |      | .withdrawal (amount, date = Date.now())
 |      | .print()
 
+- reconsidered the this.credit / desposit to be one constructor of:
+
+Object | Message 
+-------|---------
+Bank:  |
+|| constructor
+|| - this.recordOfTransaction = {
+    1: {date: 10.01.2012, credit: 1000.00, debit: "", balance: 1000 }
+    2: {date: 13.01.2012, credit: 2000.00, debit: , balance: 3000 }
+    3: {date: 14.01.2012, credit: "", debit: 500.00, balance: 2500.00}
+}
+
+
 ### User Stories
 
 AS A bank customer,
 SO THAT to track of my money 
-I NEED to have a bank balance 
+I NEED to have a bank balance √
 
 AS A bank customer, 
 SO THAT I can store
-I NEED to be able to despoit cash 
+I NEED to be able to despoit cash √
 
 AS A bank customer, 
 SO THAT I can use my money
-I NEED to be able to withdraw my cash
+I NEED to be able to withdraw my cash √
 
 AS A tax auditor 
 SO THAT I can track peoples finances 
@@ -77,6 +92,7 @@ I NEED to have an accurate record of a bank customers withdrawals
 ### Edge Cases:
 - Someone tries to withdraw money they do not have 
 - someone prints a statement without activity 
+- doesnt give exact pounds i.e. decimal
 
 
 
