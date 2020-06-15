@@ -35,14 +35,27 @@ describe('Bank', function(){
     expect(bank.getTransactionRecord()).toEqual({1: {date: "02/01/2000", credit: 2000, debit: "", balance: 2000}, 2: {date: "03/01/2000", credit: "", debit: 1000, balance: 1000}} )
   });
 
-  it("Prints out a statement of users transactions", function(){
+  it("Prints out a statement of users transaction, x1 deposit", function(){
     var date = new Date('02 January 2000 00:00 UTC');
     bank.depositMoney(2000, date)
-    expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n02/01/2000||2000||||2000")
-  })
+    expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n02/01/2000||2000||||2000\n")
+  });
+
+  it("Prints out a statement of users transaction, x1 desposit x1 withdrawal(unordered)", function(){
+    var date = new Date('02 January 2000 00:00 UTC');
+    var date2 = new Date('03 January 2000 00:00 UTC');
+    bank.depositMoney(2000, date)
+    bank.withdrawMoney(1000, date2)
+    expect(bank.printBankStatement()).toEqual("date||credit||debit||balance\n02/01/2000||2000||||2000\n03/01/2000||||1000||1000\n")
+  });
+
 
 });
 
+
+// "date     ||credit||debit ||balance\n
+// 02/01/2000||2000  ||      ||2000\n
+// 03/01/2000||      ||1000  ||1000\n"
 
 
 

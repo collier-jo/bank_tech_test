@@ -1,42 +1,50 @@
 class Bank{
-   constructor() {
+  constructor() {
     this.balance = 0;
     this.transactionRecord  = {}
     this.transactionIndex = 1
-   }
+  }
 
-   getCurrentBalance(){
+  getCurrentBalance(){
     return this.balance;
-   }
+  }
 
-   depositMoney(amount, date = new Date){
+  depositMoney(amount, date = new Date){
     this.balance += amount;
     var stringDate = date.toLocaleDateString()
     this.transactionRecord[this.transactionIndex] = {date: stringDate, credit: amount, debit: "", balance: this.balance}
     this.transactionIndex ++ 
-   }
+  }
 
-   withdrawMoney(amount, date = new Date){
+  withdrawMoney(amount, date = new Date){
     this.balance -= amount;
     var stringDate = date.toLocaleDateString()
     this.transactionRecord[this.transactionIndex] = {date: stringDate, credit: "", debit: amount, balance: this.balance}
     this.transactionIndex ++ 
-   }
+  }
 
-   getTransactionRecord(){
+  getTransactionRecord(){
     return this.transactionRecord 
-   }
+  }
 
-   printBankStatement(){
-// {1: {date: "02/01/2000", credit: 2000, debit: "", balance: 2000}
-      for(var index = 1; index = (this.transactionIndex - 1); index ++){
-        var date = this.transactionRecord[index]["date"]
-        var credit = this.transactionRecord[index]["credit"]
-        var debit = this.transactionRecord[index]["debit"]
-        var balance = this.transactionRecord[index]["balance"]
+  printBankStatement(){
+    var header = ["date||credit||debit||balance\n"]
+    var counter = 1
+    
 
+    for(var index = 1; index <= (this.transactionIndex - 1); index ++){
+      var date = this.transactionRecord[counter]["date"]
+      var credit = this.transactionRecord[counter]["credit"]
+      var debit = this.transactionRecord[counter]["debit"]
+      var balance = this.transactionRecord[counter]["balance"]
 
-        return `date||credit||debit||balance\n${date}||${credit}||${debit}||${balance}`
-      }
-   }
+      header.push(`${date}||${credit}||${debit}||${balance}\n`)
+
+      counter ++ 
+    }
+
+    var fullStatement = header.join("")
+    return fullStatement
+    
+  }
 }
