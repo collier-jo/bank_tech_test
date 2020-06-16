@@ -40,7 +40,6 @@ class Transaction{
       
     }
     this.transactionIndex ++  
-    console.log(this.transactionRecord[(this.transactionIndex - 1)]) 
     return this.transactionRecord[(this.transactionIndex - 1)]
  
   }
