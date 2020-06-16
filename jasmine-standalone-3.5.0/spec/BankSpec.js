@@ -6,6 +6,7 @@ describe('Bank', function(){
   beforeEach(function(){
     bank = new Bank;
     spyOn(Date, 'now').and.returnValue('01/01/2000');
+    // spyOn(Statement, 'print').and.returnValue()
    })
 
 
