@@ -126,11 +126,10 @@ I NEED to only withdraw funds I have
 2. Then I refactored the transaction record and date formatt into 'private' methods. 
 3. I renamed the bank class to transactions 
 3. Then I created a bank statement class moving original the logic of printBankStament into this class 
-4. The print statement class and tranactions class are dependant on eachother so I was unsure whether to move them however the abstraction seemed appropiate given their difference in functionality
 
 
 ## Dependancies 
-- The transactions class and statement class are dependant 
+ 
 
 ## Images of the code running:
 

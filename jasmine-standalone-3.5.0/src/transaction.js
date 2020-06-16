@@ -1,10 +1,9 @@
-class Bank{
+class Transaction{
   constructor( ) {
     this.balance = 0;
     this.transactionRecord  = {}
     this.transactionIndex = 1
     this.MINBALANCE = 0
-
   }
 
   getCurrentBalance(){
@@ -17,15 +16,15 @@ class Bank{
 
   depositMoney(amount){
     this.balance += amount;
-    this._updateTransactionRecord("deposit", amount)
+    return this._updateTransactionRecord("deposit", amount)
   }
 
   withdrawMoney(amount){
-    if(this.balance === this.MINBALANCE){
+    if(this.balance - amount <= this.MINBALANCE){
       throw new Error(`Insufficent Funds. Your balance is: ${this.balance}`)
     } else {
       this.balance -= amount;
-      this._updateTransactionRecord("withdrawal", amount)
+      return this._updateTransactionRecord("withdrawal", amount)
     }
   }
 
@@ -38,8 +37,12 @@ class Bank{
       this.transactionRecord[this.transactionIndex] = {date: date, credit: fixedAmount, debit: "", balance: fixedBalance}
     }else{
       this.transactionRecord[this.transactionIndex] = {date: date, credit: "", debit: fixedAmount, balance: fixedBalance}
+      
     }
-    this.transactionIndex ++ 
+    this.transactionIndex ++  
+    console.log(this.transactionRecord[(this.transactionIndex - 1)]) 
+    return this.transactionRecord[(this.transactionIndex - 1)]
+ 
   }
 
   _formatDate(){
