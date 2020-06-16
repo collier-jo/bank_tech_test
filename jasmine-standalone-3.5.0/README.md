@@ -1,10 +1,5 @@
 # Bank tech test
 
-## Install instructions
-- Fork repo
-- Clone repo to local machine 
-- Code is ready to use 
-
 ## Technology
 - Language: Javascript 
 - Testing Framework: Jasmine
@@ -152,6 +147,12 @@ I NEED to only withdraw funds I have
 - someone prints a statement without activity 
 - doesnt give exact pounds i.e. decimal
 
+
+
+## Install instructions
+- Fork repo
+- Clone repo to local machine 
+- Code is ready to use 
 
 
 ## Want to contribute?! 
