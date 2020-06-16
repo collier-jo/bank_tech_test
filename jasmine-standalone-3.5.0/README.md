@@ -66,6 +66,13 @@ Bank:  |
     3: {date: 14.01.2012, credit: "", debit: 500.00, balance: 2500.00}
 }
 
+Rename Bank to transaction 
+
+Object | Message 
+-------|---------
+Statement:  | 
+||.printBankStatement
+
 
 ### User Stories
 
@@ -97,17 +104,23 @@ AS A bank customer,
 SO THAT I do not overdraw my account
 I NEED to only withdraw funds I have
 
-### Edge Cases:
+## Extra Requirements:
 - Someone tries to withdraw money they do not have 
 - someone prints a statement without activity 
 - doesnt give exact pounds i.e. decimal
-
 
 
 ## Install instructions
 - Fork repo
 - Clone repo to local machine 
 - Code is ready to use 
+
+## My Structure
+
+I kept pretty close to my domain modelling in this project. I seperated them into classes rather than following a modular pattern as this didnt feel like a singleton object to me. 
+
+Transaction Class: The action a user would interact with below in this class, it also keeps a record of these actions. 
+Statement Class: This was abstarcted into its own class as the functiomity is different. Additonally I wanted tas the concerns of a 'transaction history' and a 'statement' are different I wanted to ensure they were kept seperate. 
 
 
 ## My Approach
@@ -123,15 +136,19 @@ I NEED to only withdraw funds I have
 - The code:
 
 1. I began by making an overall class called Bank that would handle the transactions and the print bank statement methods. 
-2. Then I refactored the transaction record and date formatt into 'private' methods. 
-3. I renamed the bank class to transactions 
+2. Then I refactored the transaction record and date format into 'private' methods. 
+3. I renamed the bank class to transactions for clarity 
 3. Then I created a bank statement class moving original the logic of printBankStament into this class 
 
 
-## Dependancies 
+## Dependancies
+- The print statement class is dependant on the transaction class. The dependancies are one way as the I think logically there would be no use for a statement that was not linked to a set of transaction. Further, you may not want a statement for a set of transactions. 
  
 
 ## Images of the code running:
+
+![running code](./images/bankTechTest.png)
+
 
 ## Want to contribute?! 
 - Fork this repo

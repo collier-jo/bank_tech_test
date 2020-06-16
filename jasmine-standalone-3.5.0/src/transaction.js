@@ -20,7 +20,7 @@ class Transaction{
   }
 
   withdrawMoney(amount){
-    if(this.balance - amount <= this.MINBALANCE){
+    if(this.balance - amount < this.MINBALANCE){
       throw new Error(`Insufficent Funds. Your balance is: ${this.balance}`)
     } else {
       this.balance -= amount;
