@@ -38,17 +38,28 @@
   // })
   // spyOn(Transaction, "depositMoney").withArgs(1000)
   // spyOn(Transaction, "withdrawMoney").withArgs(500)
+
+  //     var transactionDouble = jasmine.createSpyObj('transaction', ['depositMoney', 'transactionIndex']);
+    // transactionDouble.depositMoney.and.returnValue({1: {date: "01/01/2000", credit: "2000.00", debit: "", balance: "2000.00"}})
+    // transactionDouble.transactionIndex.and.returnValue(1)
+    // var transactionDouble = jasmine.createSpyObj('transaction', ['depositMoney', 'transactionIndex']);
+    // transactionDouble.depositMoney.and.returnValue({1: {date: "01/01/2000", credit: "2000.00", debit: "", balance: "2000.00"}})
+
 'use strict';
 
 describe("Statement", function(){
   var statement 
 
   beforeEach(function(){
-    transactionDouble = jasmine.createSpyObj('transaction', ['depositMoney', 'withdrawMoney']);
-    transactionDouble.depositMoney.withArgs(1000)
-    transactionDouble.withdrawMoney.withArgs(500)
-   
+    var transactionDouble = jasmine.createSpyObj('transaction', ['getTransactionRecord']);
+    transactionDouble.getTransactionRecord.and.returnValue({1: {date: "01/01/2000", credit: "2000.00", debit: "", balance: "2000.00"}})
+
+
     statement = new Statement(transactionDouble) 
+  });
+
+  it("Prints out a statement of users transaction, x1 deposit", function(){
+    expect(statement.printBankStatement()).toEqual("date||credit||debit||balance\n01/01/2000||2000.00||||2000.00\n")
   });
 
 
