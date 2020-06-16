@@ -36,6 +36,11 @@ describe('Transaction', function(){
     expect(bank.getCurrentBalance()).toEqual(1000)
   });
 
+  it("Can deposit money into the bank", function(){
+    bank.depositMoney(1000);
+    expect(bank. getTransactionRecord()).toEqual({1: {date: "01/01/2000", credit: "1000.00", debit: "", balance: "1000.00"}});
+  });
+
   it("Does not allow balance to be in minus", function(){
     expect(function() { bank.withdrawMoney(1000); }).toThrow(new Error("Insufficent Funds. Your balance is: 0")); 
   });  
