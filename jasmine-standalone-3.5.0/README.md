@@ -105,7 +105,10 @@ I NEED to only withdraw funds I have
 
 
 ## Install instructions
-This code is ready to use. Please fork and clone to your own GitHub to start. 
+- Fork repo
+- Clone repo to local machine 
+- Code is ready to use 
+
 
 ## My Approach
 
@@ -113,12 +116,15 @@ This code is ready to use. Please fork and clone to your own GitHub to start.
 
 - I began by using the console in the SpecRunner.html to begin. This allows me to consider the MVP guided by user interaction.  
 
-- After I address the console error as the first Jasmine test I need to write. For Example: ``` test_bank = Bank new ``` in the console returned Bank undefined. 
+- After I address the console error as the first Jasmine test I need to write. For Example: ``` test_bank = Bank new ``` in the console returned Bank undefined.
+
+- Used ESLint to ensure correct JS was used throughout 
 
 ## My Structure 
 
 ## Dependancies 
-- Using Jasmine to test the Javascript 
+- N/A
+
 
 
 
