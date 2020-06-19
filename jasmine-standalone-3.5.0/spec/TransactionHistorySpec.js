@@ -49,6 +49,37 @@ describe("TransactionHistory", function(){
       });
     });
 
+    // 1: {date: 10.01.2012, credit: 1000.00, debit: "", balance: 1000 }
+
+
+    describe("withdrawal add transaction", function(){
+      var double, bar, fetchedBar2;
+
+      var transactionHistory3
+
+      beforeEach(function() {
+        transactionHistory3 = new TransactionHistory    
+        double = {
+          setBar: function(amount, type, date) {
+            bar = {amount: amount, type: type, date: date};
+          },
+          getBar: function() {
+            return bar;
+          }
+        };
+
+        spyOn(double, "getBar").and.returnValue({amount: 1000, type: "withdrawal", date: "11/11/2011"});
+
+        double.setBar(1000, "withdrawal", "11/11/2011");
+        fetchedBar2 = double.getBar();
+      });
+
+      it("Enters correct withdrawal info into record", function(){
+        transactionHistory3.balance(1000)
+        transactionHistory3.addTransaction(fetchedBar2)
+        expect(transactionHistory3.recordOfTransaction).toEqual({0: {date: "11/11/2011", credit: "", debit: 1000, balance: 0}})
+      });
+    });
   });
 });
 

@@ -13,10 +13,14 @@ class TransactionHistory {
   addTransaction(transaction){
     let date = transaction.date 
     let amount = transaction.amount
-    let balance = this.balance()
-    this.recordOfTransaction[this.transactionIndex] = {date: date, credit: amount, debit: "", balance: balance}
+    if (transaction.type === "deposit"){
+      let balance = this.balance(amount)
+      this.recordOfTransaction[this.transactionIndex] = {date: date, credit: amount, debit: "", balance: balance}
+    }else{
+      let balance = this.balance(-amount)
+      this.recordOfTransaction[this.transactionIndex] = {date: date, credit: "", debit: amount, balance: balance}
+    }
     this.transactionIndex ++ 
-
   }
 } 
 
