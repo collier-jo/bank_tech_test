@@ -14,6 +14,7 @@ class TransactionHistory {
     let date = transaction.date 
     let amount = transaction.amount
     if (transaction.type === "deposit"){
+      console.log(transaction.type)
       let balance = this.balance(amount)
       this.recordOfTransaction[this.transactionIndex] = {date: date, credit: amount, debit: "", balance: balance}
     }else{
@@ -21,7 +22,7 @@ class TransactionHistory {
       this.recordOfTransaction[this.transactionIndex] = {date: date, credit: "", debit: amount, balance: balance}
     }
     this.transactionIndex ++ 
-    return this.totalBalance
+    return this.recordOfTransaction[this.transactionIndex - 1]
   }
 } 
 
