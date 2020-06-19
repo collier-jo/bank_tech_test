@@ -49,9 +49,6 @@ describe("TransactionHistory", function(){
       });
     });
 
-    // 1: {date: 10.01.2012, credit: 1000.00, debit: "", balance: 1000 }
-
-
     describe("withdrawal add transaction", function(){
       var double, bar, fetchedBar2;
 

@@ -4,7 +4,12 @@ class Service{
   }
 
   deposit(amount){
-    var balance = this.history.addTransaction(new Transaction(amount, "deposit"))
-    return balance
+    var transaction = this.history.addTransaction(new Transaction(amount, "deposit"))
+    return transaction
+  };
+
+  withdrawal(amount){
+    var transaction = this.history.addTransaction(new Transaction(amount, "withdrawal"))
+    return transaction
   };
 };
