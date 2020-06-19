@@ -59,8 +59,10 @@ describe("TransactionHistory", function(){
 
     it("addTransaction should add transaction to recordOfTransaction", function(){
       transactionHistory2.addTransaction(fetchedBar)
-      expect(transactionHistory2.recordOfTransaction).toEqual({0: {amount: 1000, type: "deposit", date: "11/11/2011"}})
+      expect(transactionHistory2.recordOfTransaction).toEqual({0: {date: "11/11/2011", credit: 1000, debit: "", balance: 1000}})
       expect(transactionHistory2.transactionIndex).toEqual(1)
     });
   });
 });
+
+// 1: {date: 10.01.2012, credit: 1000.00, debit: "", balance: 1000 }
