@@ -57,6 +57,10 @@ describe("TransactionHistory", function(){
       expect(transactionHistory2.balance(2000)).toEqual(1000);
     });
 
-    
+    it("addTransaction should add transaction to recordOfTransaction", function(){
+      transactionHistory2.addTransaction(fetchedBar)
+      expect(transactionHistory2.recordOfTransaction).toEqual({0: {amount: 1000, type: "deposit", date: "11/11/2011"}})
+      expect(transactionHistory2.transactionIndex).toEqual(1)
+    });
   });
 });

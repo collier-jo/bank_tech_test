@@ -8,4 +8,10 @@ class TransactionHistory {
   balance(amount){
     this.totalBalance += amount
   };
+
+  addTransaction(transaction){
+    this.recordOfTransaction[this.transactionIndex] = transaction
+    this.transactionIndex ++ 
+
+  }
 } 
