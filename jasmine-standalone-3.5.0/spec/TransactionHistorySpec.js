@@ -16,13 +16,6 @@ describe("TransactionHistory", function(){
 
 
 
-  //   transactionHistory.addTransaction(transaction)
-    
-  //   expect(transactionHistory.recordOfTransaction).toEqual({0: {date: "01/01/2000", credit: 1000.00, debit: "", balance: 1000 }})
-  //   expect(spy).toHaveBeenCalled();
-  // })
-
-
 
 
 
