@@ -21,6 +21,7 @@ class TransactionHistory {
       this.recordOfTransaction[this.transactionIndex] = {date: date, credit: "", debit: amount, balance: balance}
     }
     this.transactionIndex ++ 
+    return this.totalBalance
   }
 } 
 

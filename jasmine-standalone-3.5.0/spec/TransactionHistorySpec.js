@@ -76,7 +76,7 @@ describe("TransactionHistory", function(){
 
       it("Enters correct withdrawal info into record", function(){
         transactionHistory3.balance(1000)
-        transactionHistory3.addTransaction(fetchedBar2)
+        expect(transactionHistory3.addTransaction(fetchedBar2)).toEqual(0)
         expect(transactionHistory3.recordOfTransaction).toEqual({0: {date: "11/11/2011", credit: "", debit: 1000, balance: 0}})
       });
     });
