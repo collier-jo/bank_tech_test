@@ -19,4 +19,3 @@ class TransactionHistory {
   }
 } 
 
-// expect(transactionHistory2.recordOfTransaction).toEqual({0: {date: "11/11/2011", credit: 1000, debit: "", balance: 1000}})

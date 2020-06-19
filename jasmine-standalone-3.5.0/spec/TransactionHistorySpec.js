@@ -41,22 +41,6 @@ describe("TransactionHistory", function(){
       fetchedBar = double.getBar();
     });
 
-    it("tracks that the spy was called", function() {
-      expect(double.getBar).toHaveBeenCalled();
-    });
-
-    it("should not affect other functions", function() {
-      expect(bar).toEqual({amount: 1000, type: "deposit", date: "11/11/2011"});
-    });
-
-    it("when called returns the requested value", function() {
-      expect(fetchedBar).toEqual({amount: 1000, type: "deposit", date: "11/11/2011"});
-    });
-
-    it("should return 1000 for balance", function() {
-      expect(transactionHistory2.balance(2000)).toEqual(1000);
-    });
-
     it("addTransaction should add transaction to recordOfTransaction", function(){
       transactionHistory2.addTransaction(fetchedBar)
       expect(transactionHistory2.recordOfTransaction).toEqual({0: {date: "11/11/2011", credit: 1000, debit: "", balance: 1000}})
