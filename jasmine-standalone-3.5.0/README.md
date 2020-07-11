@@ -35,7 +35,7 @@ Statement Class: This was abstarcted into its own class as the functiomity is di
     - Statement Class
 The user interacts through the Service Class like so:
 
-
+![running code](./images/bankTechTest.png)
 
 
 ## Dependancies
@@ -196,4 +196,3 @@ I NEED to only withdraw funds I have
 - Fork this repo
 - Clone to machine 
 - Submit a pull request 
-x
