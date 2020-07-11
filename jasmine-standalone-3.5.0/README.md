@@ -78,7 +78,7 @@ A withdrawal of 500 on 14-01-2012 |
 
 ![output](./images/outputTable.png)
 
-### Domain Model: 
+## Domain Model: 
 
 Object | Message 
 -------|---------
