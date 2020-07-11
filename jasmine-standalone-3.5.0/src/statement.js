@@ -15,7 +15,7 @@ class Statement{
     var formattedRecord = []
 
     for(var index = 1; index <= i; index ++){
-      var date = record[counter].date
+      var date = record[counter].date.toLocaleDateString()
       var balance = record[counter].balance.toFixed(2)
 
       if (record[counter].credit === ""){

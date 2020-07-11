@@ -1,6 +1,7 @@
 class Service{
-  constructor(history = new TransactionHistory){
+  constructor(history = new TransactionHistory, statement = new Statement){
     this.history = history;
+    this.statement = statement
   }
 
   deposit(amount){
@@ -13,10 +14,7 @@ class Service{
     return transaction
   };
 
-  //printStatement(){
-
-    // var statement = new Statement 
-    // return statement.print(this.history.recordOfTransaction)
-    
-  //}
+  printStatement(){
+    return this.statement.print(this.history.recordOfTransaction)
+  }
 };

@@ -54,10 +54,27 @@ describe('Service', function(){
     it("Interacts with transactionhistory for deposit class", function(){
       expect(service.withdrawal(1000)).toEqual({0: {date: "11/11/2011", credit: "", debit: 1000, balance: -1000 }})
     });
-  })
+
+    describe("#printStatement", function(){
+      var service2, service2
+
+      beforeEach(function(){
+        var statementDouble = jasmine.createSpyObj('statement', ['print'])
+        statementDouble.print.and.returnValue("I am a bank statement")
+        var transaction = new TransactionHistory
+
+        service2 = new Service(transaction, statementDouble)
+      });
+
+      it("PrintStatement interacts with statement print method", function(){
+        expect(service2.printStatement()).toEqual("I am a bank statement")
+      });
+    });
+  });
 });
+
+
 
      
 
-      
 

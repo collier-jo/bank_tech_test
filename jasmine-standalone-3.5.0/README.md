@@ -6,7 +6,7 @@
 
 ## My Structure
 
-I kept pretty close to my domain modelling in this project. I seperated them into classes rather than following a modular pattern as this didnt feel like a singleton object to me. 
+I originally stuck to the domain model below. After getting a MVP working to give client value, I refactored into 4 classes. I seperated them into classes rather than following a modular pattern as this didnt feel like a singleton object to me. 
 
 Transaction Class: The action a user would interact with below in this class, it also keeps a record of these actions. 
 Statement Class: This was abstarcted into its own class as the functiomity is different. Additonally I wanted tas the concerns of a 'transaction history' and a 'statement' are different I wanted to ensure they were kept seperate. 
@@ -27,7 +27,17 @@ Statement Class: This was abstarcted into its own class as the functiomity is di
 1. I began by making an overall class called Bank that would handle the transactions and the print bank statement methods. 
 2. Then I refactored the transaction record and date format into 'private' methods. 
 3. I renamed the bank class to transactions for clarity 
-3. Then I created a bank statement class moving original the logic of printBankStament into this class 
+4. Then I created a bank statement class moving original the logic of printBankStament into this class 
+5. After I refactored further into 4 classes 
+    - Service Class 
+    - Transaction Class 
+    - Transaction History Class 
+    - Statement Class
+The user interacts through the Service Class like so:
+
+
+
+
 
 
 ## Dependancies
