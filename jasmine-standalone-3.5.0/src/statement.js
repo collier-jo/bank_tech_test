@@ -1,11 +1,18 @@
 class Statement{
 
+  _display(formattedRecord){
+    this.header = ["date||credit||debit||balance\n"]
+    this.header.push(formattedRecord)
+    var fullStatement = this.header.join("")
+    return fullStatement.replace( /,/g, "" );
+
+  }
+
   print(record){
-    //record will be a hash 
 
     var i = (Object.keys(record).length)
     var counter = (Object.keys(record).length - 1)
-    this.header =  ["date||credit||debit||balance\n"]
+    var formattedRecord = []
 
     for(var index = 1; index <= i; index ++){
       var date = record[counter].date
@@ -19,16 +26,11 @@ class Statement{
         var debit = record[counter].debit
       }
 
-      // var credit = record[counter].credit
-      // var debit = record[counter].debit
-
-      this.header.push(`${date}||${credit}||${debit}||${balance}\n`)
+      formattedRecord.push(`${date}||${credit}||${debit}||${balance}\n`)
 
       counter = counter - 1  
     }
+    return this._display(formattedRecord)
 
-
-    var fullStatement = this.header.join("")
-    return fullStatement
   }
 }
