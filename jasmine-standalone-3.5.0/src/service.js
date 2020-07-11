@@ -12,4 +12,11 @@ class Service{
     var transaction = this.history.addTransaction(new Transaction(amount, "withdrawal"))
     return transaction
   };
+
+  //printStatement(){
+
+    // var statement = new Statement 
+    // return statement.print(this.history.recordOfTransaction)
+    
+  //}
 };

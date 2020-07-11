@@ -1,27 +1,25 @@
 class Statement{
-  constructor(transaction = new Transaction){
-    this.transaction = transaction
-  }
 
-  printBankStatement(){
-    var transactionRecord = this.transaction.getTransactionRecord()
+  print(record){
+    //record will be a hash 
 
-    var header = ["date||credit||debit||balance\n"]
-    var i = (Object.keys(transactionRecord).length)
-    var counter = (Object.keys(transactionRecord).length)
+    var i = (Object.keys(record).length)
+    var counter = (Object.keys(record).length - 1)
+    this.header =  ["date||credit||debit||balance\n"]
 
     for(var index = 1; index <= i; index ++){
-      var date = transactionRecord[counter].date
-      var credit = transactionRecord[counter].credit
-      var debit = transactionRecord[counter].debit
-      var balance = transactionRecord[counter].balance
-  
-      header.push(`${date}||${credit}||${debit}||${balance}\n`)
-    
+      var date = record[counter].date
+      var credit = record[counter].credit
+      var debit = record[counter].debit
+      var balance = record[counter].balance
+
+      this.header.push(`${date}||${credit}||${debit}||${balance}\n`)
+
       counter = counter - 1  
     }
-  
-    var fullStatement = header.join("")
+
+
+    var fullStatement = this.header.join("")
     return fullStatement
   }
 }
