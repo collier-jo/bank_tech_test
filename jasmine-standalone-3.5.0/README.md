@@ -38,15 +38,9 @@ The user interacts through the Service Class like so:
 
 
 
-
-
 ## Dependancies
-- The print statement class is dependant on the transaction class. The dependancies are one way as the I think logically there would be no use for a statement that was not linked to a set of transaction. Further, you may not want a statement for a set of transactions. 
- 
+- The service class is how a user would interact with the rest of the classes. The dependancies have been isolated through dependancy injections to fully test each method / class correctly. 
 
-## Images of the code running:
-
-![running code](./images/bankTechTest.png)
 
 ## Brief
 
@@ -155,8 +149,6 @@ TransactionHistory
 ||       - return this.balance += amount
 
 
-
-
 ### User Stories
 
 AS A bank customer,
@@ -204,3 +196,4 @@ I NEED to only withdraw funds I have
 - Fork this repo
 - Clone to machine 
 - Submit a pull request 
+x
