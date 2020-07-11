@@ -1,21 +1,45 @@
 'use strict';
 
 describe("Statement", function(){
-  var statement 
+  var statement, double 
 
-  it("Prints out a statement of users transaction, x1 deposit", function(){
-    var transactionDouble = jasmine.createSpyObj('transaction', ['getTransactionRecord']);
-    transactionDouble.getTransactionRecord.and.returnValue({1: {date: "01/01/2000", credit: "2000.00", debit: "", balance: "2000.00"}})
-    statement = new Statement(transactionDouble) 
-
-    expect(statement.printBankStatement()).toEqual("date||credit||debit||balance\n01/01/2000||2000.00||||2000.00\n")
+  beforeEach(function(){
+    spyOn(Date, "now").and.returnValue("01/01/2000")
+    double = {
+      setBar: function(amount){
+        bar = amount
+      },
+      getBar: function(){
+        return bar
+      }
+    }
+    statement = new Statement 
   });
 
-  it("Prints out a statement of users transaction, x1 deposit", function(){
-    var transactionDouble2 = jasmine.createSpyObj('transaction', ['getTransactionRecord']);
-    transactionDouble2.getTransactionRecord.and.returnValue({1: {date: "01/01/2000", credit: "2000.00", debit: "", balance: "2000.00"}, 2: {date: "01/01/2000", credit: "", debit: "1000.00", balance: "1000.00"}})
-    statement = new Statement(transactionDouble2) 
+  spyOn(double, "getbar").and.returnValue()
 
-    expect(statement.printBankStatement()).toEqual("date||credit||debit||balance\n01/01/2000||||1000.00||1000.00\n01/01/2000||2000.00||||2000.00\n")
+  double.setBar();
+  fetchedBar = double.getBar();
+
+  it("Prints a statement with one deposit", function(){
+    transactionHistory.addTransction(1000, "deposit")
+    expect(statement.print()).toEqual("date||credit||debit||balance\n01/01/2000||1000.00||||1000.00\n")
   });
+
+  // it("Prints a statement with one withdrawal", function(){
+  //   transactionHistory.addTransction(1000, "withdrawal")
+  //   expect(statement.print()).toEqual("date||credit||debit||balance\n01/01/2000||||1000.00||-1000.00\n")
+  // });
+
+  // it("Prints a statement with one deposit and one withdrawal", function(){
+  //   transactionHistory.addTransction(1000, "deposit")
+  //   transactionHistory.addTransction(1, "withdrawal")
+  //   expect(statement.print()).toEqual("date||credit||debit||balance\n01/01/2000||1000.00||||1000.00\n01/01/2000||||1.00||999.00\n")
+  // });
+  
 });
+
+
+// The only place that holds the record is transactionHistory.recordOfTransactions 
+// This is intialized in Services 
+// 

@@ -7,13 +7,13 @@ describe("TransactionHistory", function(){
   });
 
   it("records a transaction into an object constructor", function(){
-    transactionHistory.balance(1000)
+    transactionHistory._balance(1000)
     expect(transactionHistory.totalBalance).toEqual(1000)
   });
 
   it("records a transaction into an object constructor", function(){
-    transactionHistory.balance(1000)
-    transactionHistory.balance(1000)
+    transactionHistory._balance(1000)
+    transactionHistory._balance(1000)
     expect(transactionHistory.totalBalance).toEqual(2000)
   });
 
@@ -25,7 +25,7 @@ describe("TransactionHistory", function(){
 
       beforeEach(function() {
         transactionHistory2 = new TransactionHistory
-        spyOn(transactionHistory2, 'balance').and.returnValue(1000)
+        spyOn(transactionHistory2, '_balance').and.returnValue(1000)
       
         double = {
           setBar: function(amount, type, date) {
@@ -72,7 +72,7 @@ describe("TransactionHistory", function(){
       });
 
       it("Enters correct withdrawal info into record", function(){
-        transactionHistory3.balance(1000)
+        transactionHistory3._balance(1000)
         expect(transactionHistory3.addTransaction(fetchedBar2)).toEqual({date: "11/11/2011", credit: "", debit: 1000, balance: 0})
         expect(transactionHistory3.recordOfTransaction).toEqual({0: {date: "11/11/2011", credit: "", debit: 1000, balance: 0}})
       });
