@@ -38,7 +38,7 @@ The user interacts through the Service Class like so:
 ![running code](./images/bankTechTest.png)
 
 
-## Dependancies
+## Dependancies
 - The service class is how a user would interact with the rest of the classes. The dependancies have been isolated through dependancy injections to fully test each method / class correctly. 
 
 
@@ -76,12 +76,7 @@ deposit of 2000 on 13-01-2012 |
 A withdrawal of 500 on 14-01-2012 |
 || Output:: 
 
-
-date       || credit  || debit  || balance
-14/01/2012 ||         || 500.00 || 2500.00
-13/01/2012 || 2000.00 ||        || 3000.00
-10/01/2012 || 1000.00 ||        || 1000.00
-
+![output](./images/outputTable.png)
 
 ### Domain Model: 
 
@@ -116,7 +111,7 @@ Statement:  |
 ||.printBankStatement
 
 
-Abstracting services and transaction and transaction history 
+**Abstracting services and transaction and transaction history** 
 
 Object | Message 
 -------|---------
@@ -186,7 +181,7 @@ I NEED to only withdraw funds I have
 
 
 
-## Install instructions
+## Install instructions
 - Fork repo
 - Clone repo to local machine 
 - Code is ready to use 
